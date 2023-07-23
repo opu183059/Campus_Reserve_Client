@@ -34,14 +34,14 @@ const Navbar = () => {
               </li>
 
               <li>
-                <Link to={"/registration"}>Colleges</Link>
+                <Link to={"/"}>Colleges</Link>
               </li>
 
               <li>
-                <Link to={"/dashboard"}>Admission</Link>
+                <Link to={"/"}>Admission</Link>
               </li>
               <li>
-                <Link to={"/dashboard"}>My College</Link>
+                <Link to={"/"}>My College</Link>
               </li>
             </ul>
           </div>
@@ -71,7 +71,7 @@ const Navbar = () => {
             </NavLink>
 
             <NavLink
-              to="/registration"
+              to="/colleges"
               className={({ isActive }) =>
                 isActive
                   ? " text-blue-700  font-bold block px-4 py-2 hover:bg-blue-600 hover:text-gray-50 transition-all duration-300 rounded-md"
@@ -82,7 +82,7 @@ const Navbar = () => {
             </NavLink>
 
             <NavLink
-              to="/dashboard"
+              to="/"
               className={({ isActive }) =>
                 isActive
                   ? " text-blue-700  font-bold block px-4 py-2 hover:bg-blue-600 hover:text-gray-50 transition-all duration-300 rounded-md"
@@ -92,7 +92,7 @@ const Navbar = () => {
               Admission
             </NavLink>
             <NavLink
-              to="/dashboard"
+              to="/"
               className={({ isActive }) =>
                 isActive
                   ? " text-blue-700  font-bold block px-4 py-2 hover:bg-blue-600 hover:text-gray-50 transition-all duration-300 rounded-md"

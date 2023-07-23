@@ -1,0 +1,157 @@
+[
+  {
+    "college_image": "https://www.entiretest.com/wp-content/uploads/2013/03/Chittagong-Medical-College-Bangladesh.jpg",
+    "college_name": "University of Science and Technology",
+    "established": 1998,
+    "rating": 5,
+    "admission_date": "2023-09-01",
+    "admission_process": "Online application and entrance exam",
+    "events": ["Freshers Party", "Science Fair", "Annual Sports Day"],
+    "research_history": true,
+    "research_work": "Nanotechnology",
+    "years_of_researching": 15,
+    "publication_number": 150,
+    "sports_category": "Basketball, Tennis, Swimming"
+  },
+  {
+    "college_image": "https://www.entiretest.com/wp-content/uploads/2013/03/Chittagong-Medical-College-Bangladesh.jpg",
+    "college_name": "Arts and Culture Institute",
+    "established": 1998,
+    "rating": 5,
+    "admission_date": "2023-08-15",
+    "admission_process": "Submission of portfolio and interview",
+    "events": ["Art Exhibition", "Literary Festival", "Dance Contest"],
+    "research_history": false,
+    "research_work": null,
+    "years_of_researching": 0,
+    "publication_number": 0,
+    "sports_category": "Football, Badminton, Yoga"
+  },
+  {
+    "college_image": "https://www.entiretest.com/wp-content/uploads/2013/03/Chittagong-Medical-College-Bangladesh.jpg",
+    "college_name": "Business School of Commerce",
+    "established": 1998,
+    "rating": 5,
+    "admission_date": "2023-07-30",
+    "admission_process": "CAT entrance exam and group discussion",
+    "events": [
+      "Entrepreneurship Summit",
+      "Economics Conference",
+      "Marketing Workshop"
+    ],
+    "research_history": true,
+    "research_work": "Financial Markets",
+    "years_of_researching": 10,
+    "publication_number": 80,
+    "sports_category": "Cricket, Table Tennis, Volleyball"
+  },
+  {
+    "college_image": "https://www.entiretest.com/wp-content/uploads/2013/03/Chittagong-Medical-College-Bangladesh.jpg",
+    "college_name": "Medical College of Health Sciences",
+    "established": 1998,
+    "rating": 5,
+    "admission_date": "2023-09-15",
+    "admission_process": "NEET entrance exam and counseling",
+    "events": [
+      "Medical Conference",
+      "Health Awareness Camp",
+      "Annual Sports Meet"
+    ],
+    "research_history": true,
+    "research_work": "Genetics and Molecular Biology",
+    "years_of_researching": 20,
+    "publication_number": 200,
+    "sports_category": "Athletics, Basketball, Chess"
+  },
+  {
+    "college_image": "https://www.entiretest.com/wp-content/uploads/2013/03/Chittagong-Medical-College-Bangladesh.jpg",
+    "college_name": "Engineering and Technology University",
+    "established": 1998,
+    "rating": 5,
+    "admission_date": "2023-08-25",
+    "admission_process": "JEE Main exam and counseling",
+    "events": ["Tech Fest", "Robotics Competition", "Coding Hackathon"],
+    "research_history": true,
+    "research_work": "Artificial Intelligence",
+    "years_of_researching": 12,
+    "publication_number": 120,
+    "sports_category": "Cricket, Football, Car Racing"
+  },
+  {
+    "college_image": "https://www.entiretest.com/wp-content/uploads/2013/03/Chittagong-Medical-College-Bangladesh.jpg",
+    "college_name": "Music and Performing Arts College",
+    "established": 1998,
+    "rating": 5,
+    "admission_date": "2023-08-01",
+    "admission_process": "Audition and interview",
+    "events": ["Music Festival", "Theater Play", "Dance Showcase"],
+    "research_history": false,
+    "research_work": null,
+    "years_of_researching": 0,
+    "publication_number": 0,
+    "sports_category": "None"
+  },
+  {
+    "college_image": "https://www.entiretest.com/wp-content/uploads/2013/03/Chittagong-Medical-College-Bangladesh.jpg",
+    "college_name": "Law School of Justice",
+    "established": 1998,
+    "rating": 5,
+    "admission_date": "2023-07-28",
+    "admission_process": "CLAT entrance exam and personal statement evaluation",
+    "events": [
+      "Moot Court Competition",
+      "Legal Symposium",
+      "Debate Tournament"
+    ],
+    "research_history": true,
+    "research_work": "Human Rights and International Law",
+    "years_of_researching": 8,
+    "publication_number": 60,
+    "sports_category": "Cricket, Basketball, Swimming"
+  },
+  {
+    "college_image": "https://www.entiretest.com/wp-content/uploads/2013/03/Chittagong-Medical-College-Bangladesh.jpg",
+    "college_name": "Environmental Sciences Institute",
+    "established": 1998,
+    "rating": 5,
+    "admission_date": "2023-09-05",
+    "admission_process": "Submission of research proposal and interview",
+    "events": [
+      "Environment Day Celebration",
+      "Sustainable Development Conference"
+    ],
+    "research_history": true,
+    "research_work": "Climate Change and Biodiversity",
+    "years_of_researching": 7,
+    "publication_number": 50,
+    "sports_category": "Hiking, Yoga, Cycling"
+  },
+  {
+    "college_image": "https://www.entiretest.com/wp-content/uploads/2013/03/Chittagong-Medical-College-Bangladesh.jpg",
+    "college_name": "Journalism and Mass Communication School",
+    "established": 1998,
+    "rating": 5,
+    "admission_date": "2023-08-10",
+    "admission_process": "Entrance exam and interview",
+    "events": ["Media Conclave", "Film Festival", "Photography Contest"],
+    "research_history": true,
+    "research_work": "Media Ethics and Communication Theories",
+    "years_of_researching": 5,
+    "publication_number": 40,
+    "sports_category": "Football, Basketball, Debate"
+  },
+  {
+    "college_image": "https://www.entiretest.com/wp-content/uploads/2013/03/Chittagong-Medical-College-Bangladesh.jpg",
+    "college_name": "History and Archaeology Institute",
+    "established": 1998,
+    "rating": 5,
+    "admission_date": "2023-07-20",
+    "admission_process": "Written test and interview",
+    "events": ["Archaeological Excavation", "Historical Symposium"],
+    "research_history": true,
+    "research_work": "Ancient Civilizations",
+    "years_of_researching": 18,
+    "publication_number": 100,
+    "sports_category": "Athletics, Chess, Swimming"
+  }
+]

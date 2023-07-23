@@ -12,16 +12,24 @@ const Banner = () => {
                 className="w-20 p-2 bg-white rounded-full shadow-md shadow-sky-600"
               />
             </div>
-            <h1 className="text-5xl font-semibold mb-4">
+            <h1
+              data-aos="zoom-in"
+              data-aos-duration="2000"
+              className="text-5xl font-semibold mb-4"
+            >
               Discover Your Ideal College Campus
             </h1>
-            <p className="w-9/12 mx-auto backdrop-blur-[2px]">
+            <p
+              data-aos="zoom-in"
+              data-aos-duration="2500"
+              className="w-9/12 mx-auto backdrop-blur-[2px]"
+            >
               Are you looking for the perfect venue to host your college events,
               seminars, workshops, or conferences? Look no further! Our College
               Booking web application brings you a seamless platform to discover
               and book the ideal venues on campuses across the nation.{" "}
             </p>
-            <div className="mt-5">
+            <div data-aos="zoom-in" data-aos-duration="3000" className="mt-5">
               <input
                 type="text"
                 placeholder="Search College"

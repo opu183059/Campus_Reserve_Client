@@ -12,11 +12,11 @@ const Footer = () => {
               <img
                 src="https://i0.wp.com/www.charlestonsouthern.edu/wp-content/uploads/AF-Symbol.jpg?resize=1024%2C913&ssl=1"
                 alt=""
-                className="flex-shrink-0 w-5 h-5 rounded-full"
+                className="flex-shrink-0 w-12 h-12 rounded-full shadow-md p-1 shadow-sky-500"
               />
             </div>
             <span className="self-center text-2xl font-semibold">
-              Brand name
+              Campus Reserve
             </span>
           </a>
         </div>
@@ -137,7 +137,7 @@ const Footer = () => {
         </div>
       </div>
       <div className="py-6 text-sm text-center dark:text-gray-400">
-        © 1968 Company Co. All rights reserved.
+        © 2023 Campus Reserve. All rights reserved.
       </div>
     </footer>
   );

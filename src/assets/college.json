@@ -2,7 +2,7 @@
   {
     "college_id": 11051,
     "college_image": "https://images.unsplash.com/photo-1607237138185-eedd9c632b0b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y29sbGVnZSUyMGNhbXB1c3xlbnwwfHwwfHx8MA%3D%3D&w=1000&q=80",
-    "college_name": "University of Science and Technology",
+    "college_name": "University of Science and Technology, Chittagong",
     "address": "Chittagong, Bangladesh",
     "established": 1909,
     "rating": 5,
@@ -34,7 +34,7 @@
   {
     "college_id": 11052,
     "college_image": "https://www.agarpurcollege.edu.bd/assets/front_end/img/photo_gallery/college-from-2021/unmukto%20vabon.jpg",
-    "college_name": "Arts and Culture Institute",
+    "college_name": "Chittagong Culture Institute",
     "address": "Chittagong, Bangladesh",
     "established": 2014,
     "rating": 4,
@@ -50,7 +50,7 @@
   {
     "college_id": 11083,
     "college_image": "https://topinbangladesh.com/wp-content/uploads/2020/09/Rajuk-Uttara-Model-College-Pic-1024x469.jpg",
-    "college_name": "Business School of Commerce",
+    "college_name": "Business School of Commerce, Dhaka",
     "address": "Dhaka, Bangladesh",
     "established": 1865,
     "rating": 5,
@@ -82,7 +82,7 @@
   {
     "college_id": 11054,
     "college_image": "https://eng-media.dhakatribune.com/?width=476&height=249&cropratio=16:9&quality=100&image=/uploads/2019/01/madaripur-picture-ramjanpur-1-1548746769743.jpg",
-    "college_name": "Medical College of Health Sciences",
+    "college_name": "Dhaka Medical College of Health Sciences",
     "address": "Dhaka, Bangladesh",
     "established": 1995,
     "rating": 4.8,
@@ -98,7 +98,7 @@
   {
     "college_id": 11055,
     "college_image": "https://images.hindustantimes.com/img/2021/09/12/550x309/BANGLADESH-HEALTH-VIRUS-EDUCATION-2_1631428046899_1631428652121.jpg",
-    "college_name": "Engineering and Technology University",
+    "college_name": "Barishal Engineering and Technology University",
     "address": "Barishal, Bangladesh",
     "established": 2010,
     "rating": 5,
@@ -114,7 +114,7 @@
   {
     "college_id": 11056,
     "college_image": "https://studybarta.files.wordpress.com/2018/07/jahurul-islam-medical-college.jpg",
-    "college_name": "Music and Performing Arts College",
+    "college_name": "Music and Performing Arts College, Barishal",
     "address": "Barishal, Bangladesh",
     "established": 2001,
     "rating": 4.9,
@@ -146,7 +146,7 @@
   {
     "college_id": 11057,
     "college_image": "https://www.entiretest.com/wp-content/uploads/2013/03/Chittagong-Medical-College-Bangladesh.jpg",
-    "college_name": "Law School of Justice",
+    "college_name": "Rajshahi Law College",
     "address": "Rajshahi, Bangladesh",
     "established": 1845,
     "rating": 5,
@@ -162,7 +162,7 @@
   {
     "college_id": 11058,
     "college_image": "https://i.ytimg.com/vi/Kdp3idFlWHQ/maxresdefault.jpg",
-    "college_name": "Environmental Sciences Institute",
+    "college_name": "Environmental Sciences Institute, Rajshahi",
     "address": "Rajshahi, Bangladesh",
     "established": 2007,
     "rating": 5,
@@ -210,7 +210,7 @@
   {
     "college_id": 110510,
     "college_image": "https://www.entiretest.com/wp-content/uploads/2013/03/Chittagong-Medical-College-Bangladesh.jpg",
-    "college_name": "History and Archaeology Institute",
+    "college_name": "History and Archaeology Institute, Khulna",
     "address": "Khulna, Bangladesh",
     "established": 1989,
     "rating": 5,

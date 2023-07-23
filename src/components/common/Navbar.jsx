@@ -1,8 +1,16 @@
+import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
+import { Authcontext } from "../provider/Authprovider";
 
 const Navbar = () => {
-  const logout = () => {
-    console.log("Logout clicked");
+  const { signOuthandle, user } = useContext(Authcontext);
+
+  const Logout = () => {
+    signOuthandle()
+      .then(() => {})
+      .catch((error) => {
+        console.log(error);
+      });
   };
   return (
     <div>
@@ -104,24 +112,26 @@ const Navbar = () => {
           </div>
         </div>
         <div className="navbar-end">
-          <>
-            <h1 className="mr-1 font-semibold text-base border-2 px-3 py-1 rounded-md">
-              Name
-            </h1>
-            <button
-              onClick={logout}
+          {user ? (
+            <>
+              <h1 className="mr-1 font-semibold text-base border-2 px-3 py-1 rounded-md">
+                {user?.displayName}
+              </h1>
+              <button
+                onClick={Logout}
+                className="text-base font-normal px-3 py-1 bg-sky-500 hover:bg-sky-700 transition-all duration-300 rounded-md uppercase text-gray-50 "
+              >
+                Log out
+              </button>
+            </>
+          ) : (
+            <Link
+              to={"/login"}
               className="text-base font-normal px-3 py-1 bg-sky-500 hover:bg-sky-700 transition-all duration-300 rounded-md uppercase text-gray-50 "
             >
-              Log out
-            </button>
-          </>
-
-          {/* <Link
-            to={"/login"}
-            className="text-base font-normal px-3 py-1 bg-sky-500 hover:bg-sky-700 transition-all duration-300 rounded-md uppercase text-gray-50 "
-          >
-            Login
-          </Link> */}
+              Login
+            </Link>
+          )}
         </div>
       </div>
     </div>

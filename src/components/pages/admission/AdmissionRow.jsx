@@ -14,7 +14,12 @@ const AdmissionRow = ({ collegedata }) => {
         <h1 className="font-semibold text-sky-950">
           {college_name}, <span className="">(Since {established})</span>
         </h1>
-        <p className="text-sm font-semibold text-gray-500">{address}</p>
+        <p className="text-sm font-semibold text-gray-500">
+          {address}{" "}
+          <span className="font-bold text-lg ml-1 animate-pulse text-sky-950">
+            ➔
+          </span>
+        </p>
       </div>
     </div>
   );

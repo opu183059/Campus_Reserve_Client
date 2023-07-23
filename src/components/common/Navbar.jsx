@@ -48,9 +48,11 @@ const Navbar = () => {
               <li>
                 <Link to={"/"}>Admission</Link>
               </li>
-              <li>
-                <Link to={"/"}>My College</Link>
-              </li>
+              {user && (
+                <li>
+                  <Link to={"/"}>My College</Link>
+                </li>
+              )}
             </ul>
           </div>
           <Link to="/" className="icon flex items-center">
@@ -99,16 +101,18 @@ const Navbar = () => {
             >
               Admission
             </NavLink>
-            <NavLink
-              to="/"
-              className={({ isActive }) =>
-                isActive
-                  ? " text-blue-700  font-bold block px-4 py-2 hover:bg-blue-600 hover:text-gray-50 transition-all duration-300 rounded-md"
-                  : "block px-4 py-2 text-gray-800  hover:text-gray-100 hover:bg-blue-600 transition-all duration-300 rounded-md"
-              }
-            >
-              My Colleges
-            </NavLink>
+            {user && (
+              <NavLink
+                to="/"
+                className={({ isActive }) =>
+                  isActive
+                    ? " text-blue-700  font-bold block px-4 py-2 hover:bg-blue-600 hover:text-gray-50 transition-all duration-300 rounded-md"
+                    : "block px-4 py-2 text-gray-800  hover:text-gray-100 hover:bg-blue-600 transition-all duration-300 rounded-md"
+                }
+              >
+                My Colleges
+              </NavLink>
+            )}
           </div>
         </div>
         <div className="navbar-end">

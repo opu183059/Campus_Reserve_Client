@@ -1,14 +1,15 @@
+import { Link } from "react-router-dom";
+
 /* eslint-disable react/prop-types */
 const CollegesCard = ({ collegedata }) => {
   const {
-    college_id,
     college_image,
     college_name,
     address,
     established,
     rating,
     admission_date,
-
+    _id,
     publication_number,
   } = collegedata || {};
   return (
@@ -34,15 +35,16 @@ const CollegesCard = ({ collegedata }) => {
             </span>{" "}
             out of 5
           </p>
-
-          <button
-            onClick={() => {
-              console.log(college_id);
-            }}
-            className="absolute -bottom-3 px-3 py-1 my-3 bg-sky-500 rounded-md text-white"
-          >
-            See College Details
-          </button>
+          <Link to={`/college-information/${_id}`}>
+            <button
+              onClick={() => {
+                console.log(_id);
+              }}
+              className="absolute -bottom-3 px-3 py-1 my-3 bg-sky-500 rounded-md text-white"
+            >
+              See College Details
+            </button>
+          </Link>
         </div>
       </div>
       <div className="details text-center pt-2">

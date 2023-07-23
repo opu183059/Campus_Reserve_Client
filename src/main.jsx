@@ -10,6 +10,7 @@ import Admission from "./components/pages/admission/Admission.jsx";
 import Authprovider from "./components/provider/Authprovider.jsx";
 import Login from "./components/pages/login&registration/Login.jsx";
 import Registration from "./components/pages/login&registration/Registration.jsx";
+import CollegeInformation from "./components/pages/colleges/CollegeInformation.jsx";
 
 const router = createBrowserRouter([
   {
@@ -24,6 +25,12 @@ const router = createBrowserRouter([
       {
         path: "/colleges",
         element: <Colleges></Colleges>,
+      },
+      {
+        path: "/college-information/:id",
+        element: <CollegeInformation></CollegeInformation>,
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/college-information/${params.id}`),
       },
       {
         path: "/admission",

@@ -1,16 +1,10 @@
-import { useEffect, useState } from "react";
+import { useContext } from "react";
 import CollegesCard from "./CollegesCard";
+import { Authcontext } from "../../provider/Authprovider";
 
 const Colleges = () => {
-  const [coleges, setColleges] = useState([]);
-  useEffect(() => {
-    fetch("/src/assets/college.json")
-      .then((res) => res.json())
-      .then((result) => {
-        setColleges(result);
-      });
-  }, []);
-  // console.log(coleges);
+  const { coleges } = useContext(Authcontext);
+
   return (
     <div className="min-h-screen pt-20">
       <h1 className="text-center mb-5 font-semibold text-4xl text-sky-700">

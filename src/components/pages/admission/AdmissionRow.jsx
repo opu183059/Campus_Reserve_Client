@@ -7,7 +7,7 @@ const AdmissionRow = ({ collegedata }) => {
       onClick={() => {
         console.log(college_id);
       }}
-      className="p-5 rounded-md shadow-md my-5 flex gap-5 cursor-pointer hover:shadow-sky-200 hover:bg-sky-50"
+      className="p-5 rounded-md shadow-md my-5 flex gap-5 cursor-pointer hover:shadow-sky-200 hover:bg-sky-50 hover:scale-105 transition-all duration-200"
     >
       <img src={college_image} alt="" className="w-14 rounded-md" />
       <div>

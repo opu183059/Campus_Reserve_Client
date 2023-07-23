@@ -17,6 +17,7 @@ const googleAuth = new GoogleAuthProvider();
 const Authprovider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [coleges, setColleges] = useState([]);
 
   const registerUser = (email, password) => {
     return createUserWithEmailAndPassword(auth, email, password);
@@ -32,6 +33,13 @@ const Authprovider = ({ children }) => {
   };
 
   useEffect(() => {
+    fetch("http://localhost:5000/all-college")
+      .then((res) => res.json())
+      .then((result) => {
+        setColleges(result);
+      });
+  }, []);
+  useEffect(() => {
     const unsubscrive = onAuthStateChanged(auth, (curentUser) => {
       // console.log("auath state change", curentUser);
       setUser(curentUser);
@@ -44,6 +52,7 @@ const Authprovider = ({ children }) => {
   const shareData = {
     user,
     loading,
+    coleges,
     registerUser,
     signOuthandle,
     logIn,

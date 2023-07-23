@@ -1,12 +1,12 @@
+import { Link } from "react-router-dom";
+
 /* eslint-disable react/prop-types */
 const AdmissionRow = ({ collegedata }) => {
-  const { college_id, college_image, address, college_name, established } =
+  const { _id, college_image, address, college_name, established } =
     collegedata || {};
   return (
-    <div
-      onClick={() => {
-        console.log(college_id);
-      }}
+    <Link
+      to={`/admission-book/${_id}`}
       className="p-5 rounded-md shadow-md my-5 flex gap-5 cursor-pointer hover:shadow-sky-200 hover:bg-sky-50 hover:scale-105 transition-all duration-200"
     >
       <img src={college_image} alt="" className="w-14 rounded-md" />
@@ -21,7 +21,7 @@ const AdmissionRow = ({ collegedata }) => {
           </span>
         </p>
       </div>
-    </div>
+    </Link>
   );
 };
 

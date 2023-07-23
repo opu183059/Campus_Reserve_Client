@@ -1,18 +1,17 @@
 /* eslint-disable no-unused-vars */
-import { useEffect } from "react";
+import { useContext, useEffect } from "react";
 import SearchCard from "./SearchCard";
+import { Authcontext } from "../../provider/Authprovider";
 
 const Search = () => {
-  useEffect(() => {
-    fetch("/src/assets/college.json")
-      .then((res) => res.json())
-      .then((result) => {
-        // console.log(result);
-      });
-  }, []);
+  const { searchCollege, search, setSearch, setNoDataMessage } =
+    useContext(Authcontext);
+
   return (
-    <div className="py-10">
-      <SearchCard></SearchCard>
+    <div className="py-10 grid gap-5">
+      {searchCollege?.map((clgData) => (
+        <SearchCard clgData={clgData} key={clgData._id}></SearchCard>
+      ))}
     </div>
   );
 };

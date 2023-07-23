@@ -1,5 +1,28 @@
+import { useContext } from "react";
+import { Authcontext } from "../../provider/Authprovider";
+
 /* eslint-disable react/no-unescaped-entities */
 const Banner = () => {
+  const { setSearchCollege, search, setSearch, setNoDataMessage } =
+    useContext(Authcontext);
+
+  const handleSearch = () => {
+    console.log(search);
+    fetch(`http://localhost:5000/searchCollege/${search}`)
+      .then((res) => res.json())
+      .then((data) => {
+        setSearchCollege(data);
+        if (data.length == 0) {
+          setNoDataMessage("No data found, Please try again");
+        } else {
+          setNoDataMessage(" ");
+        }
+      });
+    scrollTo({
+      top: 500,
+      behavior: "smooth",
+    });
+  };
   return (
     <div className="pt-5">
       <div className="hero h-screen bg-[url('https://live.staticflickr.com/1556/25084174110_92f7098c7b_b.jpg')] bg-auto bg-fixed md:bg-cover">
@@ -14,14 +37,15 @@ const Banner = () => {
             </div>
             <h1
               data-aos="zoom-in"
-              data-aos-duration="2000"
+              data-aos-duration="1500"
               className="text-5xl font-semibold mb-4"
             >
               Discover Your Ideal College Campus
             </h1>
+
             <p
               data-aos="zoom-in"
-              data-aos-duration="2500"
+              data-aos-duration="1800"
               className="w-9/12 mx-auto backdrop-blur-[2px]"
             >
               Are you looking for the perfect venue to host your college events,
@@ -29,13 +53,17 @@ const Banner = () => {
               Booking web application brings you a seamless platform to discover
               and book the ideal venues on campuses across the nation.{" "}
             </p>
-            <div data-aos="zoom-in" data-aos-duration="3000" className="mt-5">
+            <div className="mt-5">
               <input
+                onChange={(e) => setSearch(e.target.value)}
                 type="text"
                 placeholder="Search College"
                 className="bg-transparent border-[2px] w-4/12 px-3 py-1 border-sky-500 rounded-l-md"
               />
-              <button className="bg-sky-500 text-white uppercase px-3 py-1 border-[2px] border-sky-500 rounded-r-md focus:outline-none">
+              <button
+                onClick={handleSearch}
+                className="bg-sky-500 text-white uppercase px-3 py-1 border-[2px] border-sky-500 rounded-r-md focus:outline-none"
+              >
                 Search
               </button>
             </div>

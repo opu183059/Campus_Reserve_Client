@@ -7,7 +7,7 @@ const Gallery = () => {
       </h1>
 
       <section className="py-6">
-        <div className="container grid grid-cols-2 gap-4 p-4 mx-auto md:grid-cols-4">
+        <div className="max-w-5xl grid grid-cols-2 gap-8 p-4 mx-auto md:grid-cols-4">
           <img
             data-aos="zoom-in"
             data-aos-duration="2000"

@@ -42,15 +42,15 @@ const Navbar = () => {
               </li>
 
               <li>
-                <Link to={"/"}>Colleges</Link>
+                <Link to={"/colleges"}>Colleges</Link>
               </li>
 
               <li>
-                <Link to={"/"}>Admission</Link>
+                <Link to={"/admission"}>Admission</Link>
               </li>
               {user && (
                 <li>
-                  <Link to={"/"}>My College</Link>
+                  <Link to={"/myCollege"}>My College</Link>
                 </li>
               )}
             </ul>
@@ -68,13 +68,13 @@ const Navbar = () => {
           </Link>
         </div>
         <div className="navbar-center hidden lg:flex">
-          <div className="font-medium text-base flex">
+          <div className="font-semibold text-base flex">
             <NavLink
               to="/"
               className={({ isActive }) =>
                 isActive
-                  ? " text-blue-700  font-bold block px-4 py-2 hover:bg-blue-600 hover:text-gray-50 transition-all duration-300 rounded-md"
-                  : "block px-4 py-2 text-gray-800  hover:text-gray-100 hover:bg-blue-600 transition-all duration-300 rounded-md"
+                  ? " text-blue-700  block px-4 py-2 transition-all duration-300 rounded-md"
+                  : "block px-4 py-2 text-gray-800  hover:text-blue-700 transition-all duration-300 rounded-md"
               }
             >
               Home
@@ -84,8 +84,8 @@ const Navbar = () => {
               to="/colleges"
               className={({ isActive }) =>
                 isActive
-                  ? " text-blue-700  font-bold block px-4 py-2 hover:bg-blue-600 hover:text-gray-50 transition-all duration-300 rounded-md"
-                  : "block px-4 py-2 text-gray-800  hover:text-gray-100 hover:bg-blue-600 transition-all duration-300 rounded-md"
+                  ? " text-blue-700  block px-4 py-2 transition-all duration-300 rounded-md"
+                  : "block px-4 py-2 text-gray-800  hover:text-blue-700 transition-all duration-300 rounded-md"
               }
             >
               Colleges
@@ -95,19 +95,19 @@ const Navbar = () => {
               to="/admission"
               className={({ isActive }) =>
                 isActive
-                  ? " text-blue-700  font-bold block px-4 py-2 hover:bg-blue-600 hover:text-gray-50 transition-all duration-300 rounded-md"
-                  : "block px-4 py-2 text-gray-800  hover:text-gray-100 hover:bg-blue-600 transition-all duration-300 rounded-md"
+                  ? " text-blue-700  block px-4 py-2 transition-all duration-300 rounded-md"
+                  : "block px-4 py-2 text-gray-800  hover:text-blue-700 transition-all duration-300 rounded-md"
               }
             >
               Admission
             </NavLink>
             {user && (
               <NavLink
-                to="/"
+                to="/myCollege"
                 className={({ isActive }) =>
                   isActive
-                    ? " text-blue-700  font-bold block px-4 py-2 hover:bg-blue-600 hover:text-gray-50 transition-all duration-300 rounded-md"
-                    : "block px-4 py-2 text-gray-800  hover:text-gray-100 hover:bg-blue-600 transition-all duration-300 rounded-md"
+                    ? " text-blue-700  block px-4 py-2 transition-all duration-300 rounded-md"
+                    : "block px-4 py-2 text-gray-800  hover:text-blue-700 transition-all duration-300 rounded-md"
                 }
               >
                 My Colleges
@@ -118,9 +118,9 @@ const Navbar = () => {
         <div className="navbar-end">
           {user ? (
             <>
-              <h1 className="mr-1 font-semibold text-base border-2 px-3 py-1 rounded-md">
+              <button className="mr-1 text-base font-normal px-3 py-1 hover:bg-sky-700 transition-all duration-300 rounded-md uppercase text-black border-[1px] border-sky-600 hover:text-gray-50 ">
                 {user?.displayName}
-              </h1>
+              </button>
               <button
                 onClick={Logout}
                 className="text-base font-normal px-3 py-1 bg-sky-500 hover:bg-sky-700 transition-all duration-300 rounded-md uppercase text-gray-50 "

@@ -29,7 +29,7 @@ const CollegesCard = ({ collegedata }) => {
           </p>
           <p>Published Researches: {publication_number}</p>
           <p>
-            College Ratings:
+            Ratings:
             <span className="text-amber-700 text-xl font-bold ml-1">
               {rating}
             </span>{" "}

@@ -18,7 +18,9 @@ const Authprovider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
   const [coleges, setColleges] = useState([]);
-
+  const [searchCollege, setSearchCollege] = useState();
+  const [search, setSearch] = useState();
+  const [noDataMessage, setNoDataMessage] = useState("");
   const registerUser = (email, password) => {
     return createUserWithEmailAndPassword(auth, email, password);
   };
@@ -57,6 +59,12 @@ const Authprovider = ({ children }) => {
     signOuthandle,
     logIn,
     signWithGoogle,
+    searchCollege,
+    setSearchCollege,
+    search,
+    setSearch,
+    noDataMessage,
+    setNoDataMessage,
   };
   return (
     <Authcontext.Provider value={shareData}>{children}</Authcontext.Provider>

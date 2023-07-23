@@ -6,6 +6,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from "./components/pages/home/home.jsx";
 import Error from "./components/common/Error.jsx";
 import Colleges from "./components/pages/colleges/Colleges.jsx";
+import Admission from "./components/pages/admission/Admission.jsx";
 
 const router = createBrowserRouter([
   {
@@ -20,6 +21,10 @@ const router = createBrowserRouter([
       {
         path: "/colleges",
         element: <Colleges></Colleges>,
+      },
+      {
+        path: "/admission",
+        element: <Admission></Admission>,
       },
     ],
   },

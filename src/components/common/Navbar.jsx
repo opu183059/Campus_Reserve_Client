@@ -82,7 +82,7 @@ const Navbar = () => {
             </NavLink>
 
             <NavLink
-              to="/"
+              to="/admission"
               className={({ isActive }) =>
                 isActive
                   ? " text-blue-700  font-bold block px-4 py-2 hover:bg-blue-600 hover:text-gray-50 transition-all duration-300 rounded-md"

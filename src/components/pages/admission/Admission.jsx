@@ -1,31 +1,30 @@
 import { useEffect, useState } from "react";
-import CollegesCard from "./CollegesCard";
+import AdmissionRow from "./AdmissionRow";
 
-const Colleges = () => {
-  const [coleges, setColleges] = useState([]);
+const Admission = () => {
+  const [admissionColeges, setAdmissionColeges] = useState([]);
   useEffect(() => {
     fetch("/src/assets/college.json")
       .then((res) => res.json())
       .then((result) => {
-        setColleges(result);
+        setAdmissionColeges(result);
       });
   }, []);
-  // console.log(coleges);
   return (
     <div className="min-h-screen pt-20">
       <h1 className="text-center mb-5 font-semibold text-4xl text-sky-700">
-        Colleges Around the country
+        Admission page
       </h1>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 justify-center w-10/12 mx-auto">
-        {coleges.map((collegedata) => (
-          <CollegesCard
+      <div className="max-w-6xl mx-auto">
+        {admissionColeges.map((collegedata) => (
+          <AdmissionRow
             collegedata={collegedata}
             key={collegedata.college_id}
-          ></CollegesCard>
+          ></AdmissionRow>
         ))}
       </div>
     </div>
   );
 };
 
-export default Colleges;
+export default Admission;

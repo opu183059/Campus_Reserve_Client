@@ -1,10 +1,14 @@
 import { useContext, useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { Authcontext } from "../../provider/Authprovider";
+import { getAuth, sendPasswordResetEmail } from "firebase/auth";
 
 const Login = () => {
   const { logIn, signWithGoogle, user } = useContext(Authcontext);
   const [errorMessage, setErrorMessage] = useState("");
+  const [successMessage, setSuccessMessage] = useState("");
+  const [emailSet, setEmailSet] = useState("");
+  const auth = getAuth();
   const navigate = useNavigate();
 
   const handleLogin = (event) => {
@@ -25,6 +29,7 @@ const Login = () => {
         console.log(error);
         let errrormessage = error.code.split("auth/")[1];
         setErrorMessage(errrormessage);
+        setSuccessMessage(" ");
       });
   };
   const googleLogin = () => {
@@ -35,6 +40,21 @@ const Login = () => {
       })
       .catch((error) => {
         console.log(error);
+      });
+  };
+
+  const forgetPass = () => {
+    sendPasswordResetEmail(auth, emailSet)
+      .then(() => {
+        setSuccessMessage(
+          "Reset mail send please check your mail to reset pass"
+        );
+        setErrorMessage(" ");
+      })
+      .catch((error) => {
+        let errrormessage = error.code.split("auth/")[1];
+        setErrorMessage(errrormessage);
+        setSuccessMessage(" ");
       });
   };
 
@@ -57,6 +77,9 @@ const Login = () => {
           >
             <div className="relative z-0 w-full mb-6 group">
               <input
+                onChange={(e) => {
+                  setEmailSet(e.target.value);
+                }}
                 type="email"
                 name="email"
                 id="email"
@@ -77,23 +100,30 @@ const Login = () => {
                   type="password"
                   name="password"
                   id="password"
-                  className="block py-2.5 px-0 w-full text-sm text-black bg-transparent border-0 border-b-2  appearance-none   text-black   border-gray-600    focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                  className="block py-2.5 px-0 w-full text-sm text-black bg-transparent border-0 border-b-2  appearance-none border-gray-600 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
                   placeholder=" "
                   required
                 />
                 <label
                   htmlFor="password"
-                  className="peer-focus:font-medium absolute text-sm     duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:  text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+                  className="peer-focus:font-medium absolute text-sm duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:  text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
                 >
                   Password
                 </label>
               </div>
             </div>
-            <button className="block w-full rounded-md p-3 text-center   text-black text-white bg-sky-600">
+            <p
+              onClick={forgetPass}
+              className="text-sm hover:text-blue-500 hover:underline cursor-pointer"
+            >
+              Forget Password
+            </p>
+            <button className="block w-full rounded-md p-3 text-center text-white bg-sky-600">
               Log in
             </button>
             <div className="errorMessage">
               <p className="text-red-500">{errorMessage}</p>
+              <p className="text-green-500">{successMessage}</p>
             </div>
           </form>
           <div className="flex items-center pt-4 space-x-1">

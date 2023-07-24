@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Navigation } from "swiper/modules";
@@ -14,7 +15,7 @@ const ReviewsSection = () => {
         setReviews(result);
       });
   }, []);
-  console.log(reviews);
+  //   console.log(reviews);
 
   return (
     <div className="max-w-3xl mx-auto">

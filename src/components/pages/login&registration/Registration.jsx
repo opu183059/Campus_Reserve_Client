@@ -11,8 +11,9 @@ const Registration = () => {
   const [successfull, setSuccessfull] = useState("");
   const [haveMessage, setHaveMessage] = useState("Already have an account?");
   // console.log(createUser);
-  const auth = getAuth();
 
+  const auth = getAuth();
+  // opu45@gmail.com
   const handleRegistration = (event) => {
     event.preventDefault();
     setErrorMessage("");

@@ -72,11 +72,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/profile/:email",
-        element: (
-          <PrivateRoute>
-            <Profile></Profile>
-          </PrivateRoute>
-        ),
+        element: <Profile></Profile>,
       },
     ],
   },

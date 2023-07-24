@@ -1,5 +1,6 @@
 import Banner from "./Banner";
 import Gallery from "./Gallery";
+import ReviewsSection from "./ReviewsSection";
 import Search from "./Search";
 
 const Home = () => {
@@ -8,6 +9,7 @@ const Home = () => {
       <Banner></Banner>
       <Search></Search>
       <Gallery></Gallery>
+      <ReviewsSection></ReviewsSection>
     </div>
   );
 };

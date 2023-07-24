@@ -14,7 +14,7 @@ const Mycollege = () => {
         setMyBookings(result);
       });
   }, []);
-  console.log(myBookings);
+  // console.log(myBookings);
   return (
     <div className="min-h-screen pt-20">
       <h1 className="text-center mb-5 font-semibold text-3xl text-sky-700">

@@ -1,6 +1,8 @@
+import Swal from "sweetalert2";
+
 /* eslint-disable react/prop-types */
 const MycollegeRow = ({ bookedCollege }) => {
-  console.log(bookedCollege);
+  // console.log(bookedCollege);
   const {
     collegeAddress,
     collegeName,
@@ -13,6 +15,40 @@ const MycollegeRow = ({ bookedCollege }) => {
     address,
     photoUrl,
   } = bookedCollege || {};
+
+  const Review = (event) => {
+    event.preventDefault();
+    const form = event.target;
+    const rating = form.rating.value;
+    const ratings = parseInt(rating);
+    const review = form.review.value;
+    const reviewData = {
+      collegeName,
+      name,
+      email,
+      review,
+      ratings,
+      photoUrl,
+    };
+    console.log(reviewData);
+    fetch("http://localhost:5000/reviews", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(reviewData),
+    })
+      .then((res) => res.json())
+      .then((result) => {
+        if (result.insertedId) {
+          form.reset();
+          Swal.fire({
+            icon: "success",
+            title: "Review Added",
+            text: "Your review is successfuly added",
+          });
+        }
+      });
+  };
+
   return (
     <div className="my-5 shadow-lg p-5 rounded-lg group">
       <div className="flex gap-5">
@@ -26,12 +62,7 @@ const MycollegeRow = ({ bookedCollege }) => {
         <div className="right w-7/12">
           <h1 className="font-semibold text-sky-900 text-2xl">{collegeName}</h1>
           <p>{collegeAddress}</p>
-          <form
-            action=""
-            // onSubmit={AdmissionBook}
-            noValidate=""
-            className="mt-3"
-          >
+          <form action="" onSubmit={Review} noValidate="" className="mt-3">
             <fieldset className="grid grid-cols-4 gap-6 rounded-md shadow-sm">
               <div className="grid grid-cols-6 gap-4 col-span-full">
                 <div className="col-span-full">

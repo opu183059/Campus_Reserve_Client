@@ -38,7 +38,7 @@ const CollegesCard = ({ collegedata }) => {
           <Link to={`/college-information/${_id}`}>
             <button
               onClick={() => {
-                console.log(_id);
+                console.log("clicked");
               }}
               className="absolute -bottom-3 px-3 py-1 my-3 bg-sky-500 rounded-md text-white"
             >
@@ -53,7 +53,7 @@ const CollegesCard = ({ collegedata }) => {
           {college_name}
         </h1>
         <p className="text-sm text-sky-800 font-semibold">
-          {address} (Since {established}){" "}
+          {address} (Since {established})
         </p>
       </div>
     </div>

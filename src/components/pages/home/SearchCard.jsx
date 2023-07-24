@@ -1,3 +1,6 @@
+/* eslint-disable react/prop-types */
+import { Link } from "react-router-dom";
+
 const SearchCard = ({ clgData }) => {
   const {
     _id,
@@ -22,7 +25,7 @@ const SearchCard = ({ clgData }) => {
         />
       </div>
       <div className="w-7/12 border-2 rounded-r-xl border-sky-700 border-l-0 pl-4  font-medium">
-        <h1 className="mt-2 text-3xl font-semibold text-sky-800 mb-3">
+        <h1 className="mt-2 text-2xl font-semibold text-sky-800 mb-3">
           {college_name}
           <span className="text-sm ml-1">(Since {established})</span>
         </h1>
@@ -42,9 +45,11 @@ const SearchCard = ({ clgData }) => {
         <p>Sports: {sports_category}</p>
         <p>Events: {events}</p>
         <div className="my-2">
-          <button className="px-3 py-1 bg-sky-500 rounded-md text-white">
-            See College Details
-          </button>
+          <Link to={`/college-information/${_id}`}>
+            <button className="px-3 py-1 bg-sky-500 rounded-md text-white">
+              See College Details
+            </button>
+          </Link>
         </div>
       </div>
     </div>

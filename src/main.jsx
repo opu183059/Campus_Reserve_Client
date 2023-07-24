@@ -14,6 +14,7 @@ import CollegeInformation from "./components/pages/colleges/CollegeInformation.j
 import AdmissionSelect from "./components/pages/admission/AdmissionSelect.jsx";
 import Mycollege from "./components/pages/mycollege/Mycollege.jsx";
 import Profile from "./components/pages/profile/Profile.jsx";
+import PrivateRoute from "./components/privateroute/PrivateRoute.jsx";
 
 const router = createBrowserRouter([
   {
@@ -31,7 +32,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/college-information/:id",
-        element: <CollegeInformation></CollegeInformation>,
+        element: (
+          <PrivateRoute>
+            <CollegeInformation></CollegeInformation>
+          </PrivateRoute>
+        ),
         loader: ({ params }) =>
           fetch(`http://localhost:5000/college-information/${params.id}`),
       },
@@ -41,13 +46,21 @@ const router = createBrowserRouter([
       },
       {
         path: "/admission-book/:id",
-        element: <AdmissionSelect></AdmissionSelect>,
+        element: (
+          <PrivateRoute>
+            <AdmissionSelect></AdmissionSelect>
+          </PrivateRoute>
+        ),
         loader: ({ params }) =>
           fetch(`http://localhost:5000/college-information/${params.id}`),
       },
       {
         path: "/myCollege",
-        element: <Mycollege></Mycollege>,
+        element: (
+          <PrivateRoute>
+            <Mycollege></Mycollege>
+          </PrivateRoute>
+        ),
       },
       {
         path: "/login",
@@ -59,7 +72,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/profile/:email",
-        element: <Profile></Profile>,
+        element: (
+          <PrivateRoute>
+            <Profile></Profile>
+          </PrivateRoute>
+        ),
       },
     ],
   },

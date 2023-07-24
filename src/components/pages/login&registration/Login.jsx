@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Authcontext } from "../../provider/Authprovider";
 import { getAuth, sendPasswordResetEmail } from "firebase/auth";
 
@@ -10,6 +10,8 @@ const Login = () => {
   const [emailSet, setEmailSet] = useState("");
   const auth = getAuth();
   const navigate = useNavigate();
+  const location = useLocation();
+  const from = location.state?.from?.pathname || "/";
 
   const handleLogin = (event) => {
     event.preventDefault();
@@ -60,7 +62,7 @@ const Login = () => {
 
   useEffect(() => {
     if (user) {
-      navigate("/");
+      navigate(from);
     }
   }, [user]);
 

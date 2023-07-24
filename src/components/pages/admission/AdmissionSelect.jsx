@@ -53,12 +53,16 @@ const AdmissionSelect = () => {
   };
   return (
     <div className="min-h-screen pt-20">
-      <div className="max-w-5xl  mx-auto text-center">
-        <h1 className="uppercase mb-2">Book Admission in</h1>
-        <h1 className="font-semibold text-4xl text-sky-800">{college_name}</h1>
-        <p className="font-semibold">{address}</p>
+      <div className="max-w-5xl mx-auto text-center">
+        <h1 className="uppercase text-sm md:text-base mb-2">
+          Book Admission in
+        </h1>
+        <h1 className="font-semibold text-xl md:text-4xl text-sky-800">
+          {college_name}
+        </h1>
+        <p className="font-semibold text-sm md:text-base">{address}</p>
 
-        <div className="text-left w-10/12 mx-auto mt-5">
+        <div className="text-left w-11/12 md:w-10/12 mx-auto mt-5">
           <form
             onSubmit={AdmissionBook}
             action=""

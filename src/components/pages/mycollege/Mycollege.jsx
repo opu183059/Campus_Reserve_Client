@@ -17,18 +17,11 @@ const Mycollege = () => {
   // console.log(myBookings);
   return (
     <div className="min-h-screen pt-20">
-      <h1 className="text-center mb-5 font-semibold text-3xl text-sky-700">
+      <h1 className="text-center mb-5 font-semibold text-xl md:text-3xl text-sky-700">
         My Booked Colleges
       </h1>
 
       <div className="max-w-5xl mx-auto mt-6">
-        {/* {myBookings?.map((bookedCollege) => (
-          <MycollegeRow
-            bookedCollege={bookedCollege}
-            key={bookedCollege._id}
-          ></MycollegeRow>
-        ))} */}
-
         {myBookings && Array.isArray(myBookings) && myBookings.length > 0 ? (
           <>
             {myBookings?.map((bookedCollege) => (

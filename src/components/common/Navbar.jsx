@@ -49,9 +49,19 @@ const Navbar = () => {
                 <Link to={"/admission"}>Admission</Link>
               </li>
               {user && (
-                <li>
-                  <Link to={"/myCollege"}>My College</Link>
-                </li>
+                <>
+                  <li>
+                    <Link to={"/myCollege"}>My College</Link>
+                  </li>
+                  <li>
+                    <Link
+                      to={`/profile/${user?.email}`}
+                      className="mr-1 text-sm md:text-base font-normal px-3 py-1 bg-sky-700 transition-all duration-300 rounded-md uppercase mt-2 border-[1px] border-sky-600 text-gray-50 "
+                    >
+                      {user?.displayName}
+                    </Link>
+                  </li>
+                </>
               )}
             </ul>
           </div>
@@ -120,13 +130,13 @@ const Navbar = () => {
             <>
               <Link
                 to={`/profile/${user?.email}`}
-                className="mr-1 text-base font-normal px-3 py-1 hover:bg-sky-700 transition-all duration-300 rounded-md uppercase text-black border-[1px] border-sky-600 hover:text-gray-50 "
+                className="mr-1 hidden md:block text-sm md:text-base font-normal px-3 py-1 hover:bg-sky-700 transition-all duration-300 rounded-md uppercase text-black border-[1px] border-sky-600 hover:text-gray-50 "
               >
                 {user?.displayName}
               </Link>
               <button
                 onClick={Logout}
-                className="text-base font-normal px-3 py-1 bg-sky-500 hover:bg-sky-700 transition-all duration-300 rounded-md uppercase text-gray-50 "
+                className="text-sm md:text-base font-normal px-3 py-1 bg-sky-500 hover:bg-sky-700 transition-all duration-300 rounded-md uppercase text-gray-50 "
               >
                 Log out
               </button>

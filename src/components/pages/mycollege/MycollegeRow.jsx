@@ -51,17 +51,19 @@ const MycollegeRow = ({ bookedCollege }) => {
 
   return (
     <div className="my-5 shadow-lg p-5 rounded-lg group">
-      <div className="flex gap-5">
-        <div className="left w-5/12 rounded-l-lg overflow-hidden">
+      <div className="md:flex gap-5">
+        <div className="left md:w-5/12 shadow-lg md:rounded-l-lg overflow-hidden">
           <img
             src={college_image}
             alt=""
-            className="w-full h-64  group-hover:scale-110 transition-all duration-500"
+            className="w-full h-64 group-hover:scale-110 transition-all duration-500"
           />
         </div>
-        <div className="right w-7/12">
-          <h1 className="font-semibold text-sky-900 text-2xl">{collegeName}</h1>
-          <p>{collegeAddress}</p>
+        <div className="right md:w-7/12">
+          <h1 className="font-semibold text-sky-900 text-xl md:text-2xl">
+            {collegeName}
+          </h1>
+          <p className=" text-sm md:text-base">{collegeAddress}</p>
           <form action="" onSubmit={Review} noValidate="" className="mt-3">
             <fieldset className="grid grid-cols-4 gap-6 rounded-md shadow-sm">
               <div className="grid grid-cols-6 gap-4 col-span-full">
@@ -96,11 +98,11 @@ const MycollegeRow = ({ bookedCollege }) => {
         </div>
       </div>
       <p className="mt-5 font-semibold text-xl">Applicant Details:</p>
-      <div className="flex shadow-md mt-4 gap-5 bg-sky-100/80 p-5 rounded-lg">
-        <div className="">
+      <div className="md:flex shadow-md mt-4 gap-5 bg-sky-100/80 p-5 rounded-lg">
+        <div className="mb-2 md:mb-0">
           <img src={photoUrl} alt="" className="w-[70px] h-[70px] rounded-md" />
         </div>
-        <div className="flex gap-20 font-semibold">
+        <div className="md:flex gap-20 font-semibold">
           <div>
             <p>Name: {name}</p>
             <p>Email: {email}</p>

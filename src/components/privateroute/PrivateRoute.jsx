@@ -6,7 +6,6 @@ import Swal from "sweetalert2";
 import { Authcontext } from "../provider/Authprovider";
 const PrivateRoute = ({ children }) => {
   const location = useLocation();
-
   const { user, loading } = useContext(Authcontext);
   if (loading) {
     return (

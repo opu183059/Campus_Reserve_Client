@@ -38,7 +38,9 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/college-information/${params.id}`),
+          fetch(
+            `https://campus-reserve-server-gamma.vercel.app/college-information/${params.id}`
+          ),
       },
       {
         path: "/admission",
@@ -52,7 +54,9 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/college-information/${params.id}`),
+          fetch(
+            `https://campus-reserve-server-gamma.vercel.app/college-information/${params.id}`
+          ),
       },
       {
         path: "/myCollege",
@@ -72,7 +76,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/profile/:email",
-        element: <Profile></Profile>,
+        element: (
+          <PrivateRoute>
+            <Profile></Profile>
+          </PrivateRoute>
+        ),
       },
     ],
   },

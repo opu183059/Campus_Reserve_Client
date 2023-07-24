@@ -9,7 +9,7 @@ import { useEffect, useState } from "react";
 const ReviewsSection = () => {
   const [reviews, setReviews] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/all-reviews")
+    fetch("https://campus-reserve-server-gamma.vercel.app/all-reviews")
       .then((res) => res.json())
       .then((result) => {
         setReviews(result);

@@ -20,13 +20,16 @@ const Registration = () => {
       university: user?.university,
       address: user?.address,
     };
-    fetch(`http://localhost:5000/users/${user?.email}`, {
-      method: "PUT",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(saveUserData),
-    })
+    fetch(
+      `https://campus-reserve-server-gamma.vercel.app/users/${user?.email}`,
+      {
+        method: "PUT",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(saveUserData),
+      }
+    )
       .then((res) => res.json())
       .then((data) => console.log(data));
   };

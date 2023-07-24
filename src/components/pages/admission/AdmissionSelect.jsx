@@ -33,7 +33,7 @@ const AdmissionSelect = () => {
       collegeAddress: collegedata.address,
     };
     console.log(bookAdmissionData);
-    fetch("http://localhost:5000/bookAdmission", {
+    fetch("https://campus-reserve-server-gamma.vercel.app/bookAdmission", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(bookAdmissionData),

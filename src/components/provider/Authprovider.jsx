@@ -35,7 +35,7 @@ const Authprovider = ({ children }) => {
   };
 
   useEffect(() => {
-    fetch("http://localhost:5000/all-college")
+    fetch("https://campus-reserve-server-gamma.vercel.app/all-college")
       .then((res) => res.json())
       .then((result) => {
         setColleges(result);

@@ -8,7 +8,9 @@ const Mycollege = () => {
   const [myBookings, setMyBookings] = useState();
 
   useEffect(() => {
-    fetch(`http://localhost:5000/myBookings/${user?.email}`)
+    fetch(
+      `https://campus-reserve-server-gamma.vercel.app/myBookings/${user?.email}`
+    )
       .then((res) => res.json())
       .then((result) => {
         setMyBookings(result);

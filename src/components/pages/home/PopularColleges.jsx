@@ -4,7 +4,7 @@ import CollegesCard from "../colleges/CollegesCard";
 
 const PopularColleges = () => {
   const { coleges } = useContext(Authcontext);
-  console.log(coleges.slice(0, 3));
+  // console.log(coleges.slice(0, 3));
   return (
     <div className="pb-10">
       <h1 className="text-center mb-5 font-semibold text-4xl text-sky-700">

@@ -8,7 +8,9 @@ const Banner = () => {
 
   const handleSearch = () => {
     console.log(search);
-    fetch(`http://localhost:5000/searchCollege/${search}`)
+    fetch(
+      `https://campus-reserve-server-gamma.vercel.app/searchCollege/${search}`
+    )
       .then((res) => res.json())
       .then((data) => {
         setSearchCollege(data);

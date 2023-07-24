@@ -13,6 +13,7 @@ import Registration from "./components/pages/login&registration/Registration.jsx
 import CollegeInformation from "./components/pages/colleges/CollegeInformation.jsx";
 import AdmissionSelect from "./components/pages/admission/AdmissionSelect.jsx";
 import Mycollege from "./components/pages/mycollege/Mycollege.jsx";
+import Profile from "./components/pages/profile/Profile.jsx";
 
 const router = createBrowserRouter([
   {
@@ -55,6 +56,10 @@ const router = createBrowserRouter([
       {
         path: "/registration",
         element: <Registration></Registration>,
+      },
+      {
+        path: "/profile/:email",
+        element: <Profile></Profile>,
       },
     ],
   },

@@ -118,9 +118,12 @@ const Navbar = () => {
         <div className="navbar-end">
           {user ? (
             <>
-              <button className="mr-1 text-base font-normal px-3 py-1 hover:bg-sky-700 transition-all duration-300 rounded-md uppercase text-black border-[1px] border-sky-600 hover:text-gray-50 ">
+              <Link
+                to={`/profile/${user?.email}`}
+                className="mr-1 text-base font-normal px-3 py-1 hover:bg-sky-700 transition-all duration-300 rounded-md uppercase text-black border-[1px] border-sky-600 hover:text-gray-50 "
+              >
                 {user?.displayName}
-              </button>
+              </Link>
               <button
                 onClick={Logout}
                 className="text-base font-normal px-3 py-1 bg-sky-500 hover:bg-sky-700 transition-all duration-300 rounded-md uppercase text-gray-50 "

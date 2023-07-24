@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { Authcontext } from "../../provider/Authprovider";
@@ -6,14 +7,30 @@ import Swal from "sweetalert2";
 
 const Registration = () => {
   const { registerUser, signOuthandle, user } = useContext(Authcontext);
-
   const [errorMessage, setErrorMessage] = useState("");
   const [successfull, setSuccessfull] = useState("");
   const [haveMessage, setHaveMessage] = useState("Already have an account?");
-  // console.log(createUser);
 
   const auth = getAuth();
-  // opu45@gmail.com
+  // save user in the data base
+  const saveUser = (user) => {
+    const saveUserData = {
+      email: user?.email,
+      name: user?.name,
+      university: user?.university,
+      address: user?.address,
+    };
+    fetch(`http://localhost:5000/users/${user?.email}`, {
+      method: "PUT",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(saveUserData),
+    })
+      .then((res) => res.json())
+      .then((data) => console.log(data));
+  };
+
   const handleRegistration = (event) => {
     event.preventDefault();
     setErrorMessage("");
@@ -22,7 +39,9 @@ const Registration = () => {
     const name = form.name.value;
     const email = form.email.value;
     const password = form.password.value;
-    console.log(name, email, password);
+    const university = form.university.value;
+    const address = form.address.value;
+    const user = { name, email, password, university, address };
 
     if (!name) {
       Swal.fire({
@@ -74,8 +93,9 @@ const Registration = () => {
             .catch((error) => {
               console.log(error);
             });
-          console.log(loggedUser);
+          // console.log(loggedUser);
           form.reset();
+          saveUser(user);
           signOuthandle()
             .then(() => {})
             .catch((error) => {
@@ -93,7 +113,7 @@ const Registration = () => {
   return (
     <div className="pt-20">
       <div className="w-9/12 md:w-7/12 lg:w-6/12 mx-auto my-10">
-        <div className="md:w-10/12 mx-auto w-full p-8 space-y-3 rounded-xl  bg-indigo-50  text-gray-100">
+        <div className="md:w-10/12 mx-auto w-full p-8 space-y-3 rounded-xl  bg-indigo-50 ">
           <h1 className="text-2xl font-bold text-center">Registration</h1>
 
           <form
@@ -115,6 +135,36 @@ const Registration = () => {
                 className="peer-focus:font-medium absolute text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus: peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
               >
                 Name
+              </label>
+            </div>
+            <div className="relative z-0 w-full mb-6 group">
+              <input
+                type="text"
+                name="university"
+                id="university"
+                className="block py-2.5 px-0 w-full text-sm text-black bg-transparent border-0 border-b-2  appearance-none    border-gray-600  fo focus:outline-none focus:ring-0 peer"
+                placeholder=" "
+              />
+              <label
+                htmlFor="university"
+                className="peer-focus:font-medium absolute text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus: peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+              >
+                University
+              </label>
+            </div>
+            <div className="relative z-0 w-full mb-6 group">
+              <input
+                type="text"
+                name="address"
+                id="address"
+                className="block py-2.5 px-0 w-full text-sm text-black bg-transparent border-0 border-b-2  appearance-none    border-gray-600  fo focus:outline-none focus:ring-0 peer"
+                placeholder=" "
+              />
+              <label
+                htmlFor="address"
+                className="peer-focus:font-medium absolute text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus: peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+              >
+                Address
               </label>
             </div>
             <div className="relative z-0 w-full mb-6 group">
@@ -161,20 +211,14 @@ const Registration = () => {
             {user ? (
               <p className="text-xs text-center sm:px-6">
                 {haveMessage}{" "}
-                <Link
-                  to="/login"
-                  className=" text-sm font-semibold underline  text-gray-100"
-                >
+                <Link to="/login" className=" text-sm font-semibold underline">
                   login
                 </Link>{" "}
               </p>
             ) : (
               <p className="text-xs text-center sm:px-6">
                 {haveMessage}{" "}
-                <Link
-                  to="/login"
-                  className=" text-sm font-semibold underline  text-gray-100"
-                >
+                <Link to="/login" className=" text-sm font-semibold underline">
                   login
                 </Link>
               </p>
